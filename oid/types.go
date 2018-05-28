@@ -3,341 +3,915 @@
 package oid
 
 const (
-	T_bool             Oid = 16
-	T_bytea            Oid = 17
-	T_char             Oid = 18
-	T_name             Oid = 19
-	T_int8             Oid = 20
-	T_int2             Oid = 21
-	T_int2vector       Oid = 22
-	T_int4             Oid = 23
-	T_regproc          Oid = 24
-	T_text             Oid = 25
-	T_oid              Oid = 26
-	T_tid              Oid = 27
-	T_xid              Oid = 28
-	T_cid              Oid = 29
-	T_oidvector        Oid = 30
-	T_pg_ddl_command   Oid = 32
-	T_pg_type          Oid = 71
-	T_pg_attribute     Oid = 75
-	T_pg_proc          Oid = 81
-	T_pg_class         Oid = 83
-	T_json             Oid = 114
-	T_xml              Oid = 142
-	T__xml             Oid = 143
-	T_pg_node_tree     Oid = 194
-	T__json            Oid = 199
-	T_smgr             Oid = 210
-	T_index_am_handler Oid = 325
-	T_point            Oid = 600
-	T_lseg             Oid = 601
-	T_path             Oid = 602
-	T_box              Oid = 603
-	T_polygon          Oid = 604
-	T_line             Oid = 628
-	T__line            Oid = 629
-	T_cidr             Oid = 650
-	T__cidr            Oid = 651
-	T_float4           Oid = 700
-	T_float8           Oid = 701
-	T_abstime          Oid = 702
-	T_reltime          Oid = 703
-	T_tinterval        Oid = 704
-	T_unknown          Oid = 705
-	T_circle           Oid = 718
-	T__circle          Oid = 719
-	T_money            Oid = 790
-	T__money           Oid = 791
-	T_macaddr          Oid = 829
-	T_inet             Oid = 869
-	T__bool            Oid = 1000
-	T__bytea           Oid = 1001
-	T__char            Oid = 1002
-	T__name            Oid = 1003
-	T__int2            Oid = 1005
-	T__int2vector      Oid = 1006
-	T__int4            Oid = 1007
-	T__regproc         Oid = 1008
-	T__text            Oid = 1009
-	T__tid             Oid = 1010
-	T__xid             Oid = 1011
-	T__cid             Oid = 1012
-	T__oidvector       Oid = 1013
-	T__bpchar          Oid = 1014
-	T__varchar         Oid = 1015
-	T__int8            Oid = 1016
-	T__point           Oid = 1017
-	T__lseg            Oid = 1018
-	T__path            Oid = 1019
-	T__box             Oid = 1020
-	T__float4          Oid = 1021
-	T__float8          Oid = 1022
-	T__abstime         Oid = 1023
-	T__reltime         Oid = 1024
-	T__tinterval       Oid = 1025
-	T__polygon         Oid = 1027
-	T__oid             Oid = 1028
-	T_aclitem          Oid = 1033
-	T__aclitem         Oid = 1034
-	T__macaddr         Oid = 1040
-	T__inet            Oid = 1041
-	T_bpchar           Oid = 1042
-	T_varchar          Oid = 1043
-	T_date             Oid = 1082
-	T_time             Oid = 1083
-	T_timestamp        Oid = 1114
-	T__timestamp       Oid = 1115
-	T__date            Oid = 1182
-	T__time            Oid = 1183
-	T_timestamptz      Oid = 1184
-	T__timestamptz     Oid = 1185
-	T_interval         Oid = 1186
-	T__interval        Oid = 1187
-	T__numeric         Oid = 1231
-	T_pg_database      Oid = 1248
-	T__cstring         Oid = 1263
-	T_timetz           Oid = 1266
-	T__timetz          Oid = 1270
-	T_bit              Oid = 1560
-	T__bit             Oid = 1561
-	T_varbit           Oid = 1562
-	T__varbit          Oid = 1563
-	T_numeric          Oid = 1700
-	T_refcursor        Oid = 1790
-	T__refcursor       Oid = 2201
-	T_regprocedure     Oid = 2202
-	T_regoper          Oid = 2203
-	T_regoperator      Oid = 2204
-	T_regclass         Oid = 2205
-	T_regtype          Oid = 2206
-	T__regprocedure    Oid = 2207
-	T__regoper         Oid = 2208
-	T__regoperator     Oid = 2209
-	T__regclass        Oid = 2210
-	T__regtype         Oid = 2211
-	T_record           Oid = 2249
-	T_cstring          Oid = 2275
-	T_any              Oid = 2276
-	T_anyarray         Oid = 2277
-	T_void             Oid = 2278
-	T_trigger          Oid = 2279
-	T_language_handler Oid = 2280
-	T_internal         Oid = 2281
-	T_opaque           Oid = 2282
-	T_anyelement       Oid = 2283
-	T__record          Oid = 2287
-	T_anynonarray      Oid = 2776
-	T_pg_authid        Oid = 2842
-	T_pg_auth_members  Oid = 2843
-	T__txid_snapshot   Oid = 2949
-	T_uuid             Oid = 2950
-	T__uuid            Oid = 2951
-	T_txid_snapshot    Oid = 2970
-	T_fdw_handler      Oid = 3115
-	T_pg_lsn           Oid = 3220
-	T__pg_lsn          Oid = 3221
-	T_tsm_handler      Oid = 3310
-	T_anyenum          Oid = 3500
-	T_tsvector         Oid = 3614
-	T_tsquery          Oid = 3615
-	T_gtsvector        Oid = 3642
-	T__tsvector        Oid = 3643
-	T__gtsvector       Oid = 3644
-	T__tsquery         Oid = 3645
-	T_regconfig        Oid = 3734
-	T__regconfig       Oid = 3735
-	T_regdictionary    Oid = 3769
-	T__regdictionary   Oid = 3770
-	T_jsonb            Oid = 3802
-	T__jsonb           Oid = 3807
-	T_anyrange         Oid = 3831
-	T_event_trigger    Oid = 3838
-	T_int4range        Oid = 3904
-	T__int4range       Oid = 3905
-	T_numrange         Oid = 3906
-	T__numrange        Oid = 3907
-	T_tsrange          Oid = 3908
-	T__tsrange         Oid = 3909
-	T_tstzrange        Oid = 3910
-	T__tstzrange       Oid = 3911
-	T_daterange        Oid = 3912
-	T__daterange       Oid = 3913
-	T_int8range        Oid = 3926
-	T__int8range       Oid = 3927
-	T_pg_shseclabel    Oid = 4066
-	T_regnamespace     Oid = 4089
-	T__regnamespace    Oid = 4090
-	T_regrole          Oid = 4096
-	T__regrole         Oid = 4097
+	T_bool                                  Oid = 16
+	T_bytea                                 Oid = 17
+	T_char                                  Oid = 18
+	T_name                                  Oid = 19
+	T_int8                                  Oid = 20
+	T_int2                                  Oid = 21
+	T_int2vector                            Oid = 22
+	T_int4                                  Oid = 23
+	T_regproc                               Oid = 24
+	T_text                                  Oid = 25
+	T_oid                                   Oid = 26
+	T_tid                                   Oid = 27
+	T_xid                                   Oid = 28
+	T_cid                                   Oid = 29
+	T_oidvector                             Oid = 30
+	T_pg_ddl_command                        Oid = 32
+	T_pg_type                               Oid = 71
+	T_pg_attribute                          Oid = 75
+	T_pg_proc                               Oid = 81
+	T_pg_class                              Oid = 83
+	T_json                                  Oid = 114
+	T_xml                                   Oid = 142
+	T__xml                                  Oid = 143
+	T_pg_node_tree                          Oid = 194
+	T__json                                 Oid = 199
+	T_smgr                                  Oid = 210
+	T_index_am_handler                      Oid = 325
+	T_point                                 Oid = 600
+	T_lseg                                  Oid = 601
+	T_path                                  Oid = 602
+	T_box                                   Oid = 603
+	T_polygon                               Oid = 604
+	T_line                                  Oid = 628
+	T__line                                 Oid = 629
+	T_cidr                                  Oid = 650
+	T__cidr                                 Oid = 651
+	T_float4                                Oid = 700
+	T_float8                                Oid = 701
+	T_abstime                               Oid = 702
+	T_reltime                               Oid = 703
+	T_tinterval                             Oid = 704
+	T_unknown                               Oid = 705
+	T_circle                                Oid = 718
+	T__circle                               Oid = 719
+	T_macaddr8                              Oid = 774
+	T__macaddr8                             Oid = 775
+	T_money                                 Oid = 790
+	T__money                                Oid = 791
+	T_macaddr                               Oid = 829
+	T_inet                                  Oid = 869
+	T__bool                                 Oid = 1000
+	T__bytea                                Oid = 1001
+	T__char                                 Oid = 1002
+	T__name                                 Oid = 1003
+	T__int2                                 Oid = 1005
+	T__int2vector                           Oid = 1006
+	T__int4                                 Oid = 1007
+	T__regproc                              Oid = 1008
+	T__text                                 Oid = 1009
+	T__tid                                  Oid = 1010
+	T__xid                                  Oid = 1011
+	T__cid                                  Oid = 1012
+	T__oidvector                            Oid = 1013
+	T__bpchar                               Oid = 1014
+	T__varchar                              Oid = 1015
+	T__int8                                 Oid = 1016
+	T__point                                Oid = 1017
+	T__lseg                                 Oid = 1018
+	T__path                                 Oid = 1019
+	T__box                                  Oid = 1020
+	T__float4                               Oid = 1021
+	T__float8                               Oid = 1022
+	T__abstime                              Oid = 1023
+	T__reltime                              Oid = 1024
+	T__tinterval                            Oid = 1025
+	T__polygon                              Oid = 1027
+	T__oid                                  Oid = 1028
+	T_aclitem                               Oid = 1033
+	T__aclitem                              Oid = 1034
+	T__macaddr                              Oid = 1040
+	T__inet                                 Oid = 1041
+	T_bpchar                                Oid = 1042
+	T_varchar                               Oid = 1043
+	T_date                                  Oid = 1082
+	T_time                                  Oid = 1083
+	T_timestamp                             Oid = 1114
+	T__timestamp                            Oid = 1115
+	T__date                                 Oid = 1182
+	T__time                                 Oid = 1183
+	T_timestamptz                           Oid = 1184
+	T__timestamptz                          Oid = 1185
+	T_interval                              Oid = 1186
+	T__interval                             Oid = 1187
+	T__numeric                              Oid = 1231
+	T_pg_database                           Oid = 1248
+	T__cstring                              Oid = 1263
+	T_timetz                                Oid = 1266
+	T__timetz                               Oid = 1270
+	T_bit                                   Oid = 1560
+	T__bit                                  Oid = 1561
+	T_varbit                                Oid = 1562
+	T__varbit                               Oid = 1563
+	T_numeric                               Oid = 1700
+	T_refcursor                             Oid = 1790
+	T__refcursor                            Oid = 2201
+	T_regprocedure                          Oid = 2202
+	T_regoper                               Oid = 2203
+	T_regoperator                           Oid = 2204
+	T_regclass                              Oid = 2205
+	T_regtype                               Oid = 2206
+	T__regprocedure                         Oid = 2207
+	T__regoper                              Oid = 2208
+	T__regoperator                          Oid = 2209
+	T__regclass                             Oid = 2210
+	T__regtype                              Oid = 2211
+	T_record                                Oid = 2249
+	T_cstring                               Oid = 2275
+	T_any                                   Oid = 2276
+	T_anyarray                              Oid = 2277
+	T_void                                  Oid = 2278
+	T_trigger                               Oid = 2279
+	T_language_handler                      Oid = 2280
+	T_internal                              Oid = 2281
+	T_opaque                                Oid = 2282
+	T_anyelement                            Oid = 2283
+	T__record                               Oid = 2287
+	T_anynonarray                           Oid = 2776
+	T_pg_authid                             Oid = 2842
+	T_pg_auth_members                       Oid = 2843
+	T__txid_snapshot                        Oid = 2949
+	T_uuid                                  Oid = 2950
+	T__uuid                                 Oid = 2951
+	T_txid_snapshot                         Oid = 2970
+	T_fdw_handler                           Oid = 3115
+	T_pg_lsn                                Oid = 3220
+	T__pg_lsn                               Oid = 3221
+	T_tsm_handler                           Oid = 3310
+	T_pg_ndistinct                          Oid = 3361
+	T_pg_dependencies                       Oid = 3402
+	T_anyenum                               Oid = 3500
+	T_tsvector                              Oid = 3614
+	T_tsquery                               Oid = 3615
+	T_gtsvector                             Oid = 3642
+	T__tsvector                             Oid = 3643
+	T__gtsvector                            Oid = 3644
+	T__tsquery                              Oid = 3645
+	T_regconfig                             Oid = 3734
+	T__regconfig                            Oid = 3735
+	T_regdictionary                         Oid = 3769
+	T__regdictionary                        Oid = 3770
+	T_jsonb                                 Oid = 3802
+	T__jsonb                                Oid = 3807
+	T_anyrange                              Oid = 3831
+	T_event_trigger                         Oid = 3838
+	T_int4range                             Oid = 3904
+	T__int4range                            Oid = 3905
+	T_numrange                              Oid = 3906
+	T__numrange                             Oid = 3907
+	T_tsrange                               Oid = 3908
+	T__tsrange                              Oid = 3909
+	T_tstzrange                             Oid = 3910
+	T__tstzrange                            Oid = 3911
+	T_daterange                             Oid = 3912
+	T__daterange                            Oid = 3913
+	T_int8range                             Oid = 3926
+	T__int8range                            Oid = 3927
+	T_pg_shseclabel                         Oid = 4066
+	T_regnamespace                          Oid = 4089
+	T__regnamespace                         Oid = 4090
+	T_regrole                               Oid = 4096
+	T__regrole                              Oid = 4097
+	T_pg_subscription                       Oid = 6101
+	T_pg_attrdef                            Oid = 10000
+	T_pg_constraint                         Oid = 10001
+	T_pg_inherits                           Oid = 10002
+	T_pg_index                              Oid = 10003
+	T_pg_operator                           Oid = 10004
+	T_pg_opfamily                           Oid = 10005
+	T_pg_opclass                            Oid = 10006
+	T_pg_am                                 Oid = 10130
+	T_pg_amop                               Oid = 10131
+	T_pg_amproc                             Oid = 10841
+	T_pg_language                           Oid = 11253
+	T_pg_largeobject_metadata               Oid = 11254
+	T_pg_largeobject                        Oid = 11255
+	T_pg_aggregate                          Oid = 11256
+	T_pg_statistic_ext                      Oid = 11257
+	T_pg_statistic                          Oid = 11258
+	T_pg_rewrite                            Oid = 11259
+	T_pg_trigger                            Oid = 11260
+	T_pg_event_trigger                      Oid = 11261
+	T_pg_description                        Oid = 11262
+	T_pg_cast                               Oid = 11263
+	T_pg_enum                               Oid = 11483
+	T_pg_namespace                          Oid = 11484
+	T_pg_conversion                         Oid = 11485
+	T_pg_depend                             Oid = 11486
+	T_pg_db_role_setting                    Oid = 11487
+	T_pg_tablespace                         Oid = 11488
+	T_pg_pltemplate                         Oid = 11489
+	T_pg_shdepend                           Oid = 11490
+	T_pg_shdescription                      Oid = 11491
+	T_pg_ts_config                          Oid = 11492
+	T_pg_ts_config_map                      Oid = 11493
+	T_pg_ts_dict                            Oid = 11494
+	T_pg_ts_parser                          Oid = 11495
+	T_pg_ts_template                        Oid = 11496
+	T_pg_extension                          Oid = 11497
+	T_pg_foreign_data_wrapper               Oid = 11498
+	T_pg_foreign_server                     Oid = 11499
+	T_pg_user_mapping                       Oid = 11500
+	T_pg_foreign_table                      Oid = 11501
+	T_pg_policy                             Oid = 11502
+	T_pg_replication_origin                 Oid = 11503
+	T_pg_default_acl                        Oid = 11504
+	T_pg_init_privs                         Oid = 11505
+	T_pg_seclabel                           Oid = 11506
+	T_pg_collation                          Oid = 11507
+	T_pg_partitioned_table                  Oid = 11508
+	T_pg_range                              Oid = 11509
+	T_pg_transform                          Oid = 11510
+	T_pg_sequence                           Oid = 11511
+	T_pg_publication                        Oid = 11512
+	T_pg_publication_rel                    Oid = 11513
+	T_pg_subscription_rel                   Oid = 11514
+	T_pg_toast_2604                         Oid = 11515
+	T_pg_toast_2606                         Oid = 11516
+	T_pg_toast_2609                         Oid = 11517
+	T_pg_toast_1255                         Oid = 11518
+	T_pg_toast_2618                         Oid = 11519
+	T_pg_toast_3596                         Oid = 11520
+	T_pg_toast_2619                         Oid = 11521
+	T_pg_toast_3381                         Oid = 11522
+	T_pg_toast_2620                         Oid = 11523
+	T_pg_toast_2396                         Oid = 11524
+	T_pg_toast_2964                         Oid = 11525
+	T_pg_toast_3592                         Oid = 11526
+	T_pg_roles                              Oid = 11528
+	T_pg_shadow                             Oid = 11532
+	T_pg_group                              Oid = 11536
+	T_pg_user                               Oid = 11539
+	T_pg_policies                           Oid = 11542
+	T_pg_rules                              Oid = 11546
+	T_pg_views                              Oid = 11550
+	T_pg_tables                             Oid = 11554
+	T_pg_matviews                           Oid = 11558
+	T_pg_indexes                            Oid = 11562
+	T_pg_sequences                          Oid = 11566
+	T_pg_stats                              Oid = 11570
+	T_pg_publication_tables                 Oid = 11574
+	T_pg_locks                              Oid = 11578
+	T_pg_cursors                            Oid = 11581
+	T_pg_available_extensions               Oid = 11584
+	T_pg_available_extension_versions       Oid = 11587
+	T_pg_prepared_xacts                     Oid = 11590
+	T_pg_prepared_statements                Oid = 11594
+	T_pg_seclabels                          Oid = 11597
+	T_pg_settings                           Oid = 11601
+	T_pg_file_settings                      Oid = 11606
+	T_pg_hba_file_rules                     Oid = 11609
+	T_pg_timezone_abbrevs                   Oid = 11612
+	T_pg_timezone_names                     Oid = 11615
+	T_pg_config                             Oid = 11618
+	T_pg_stat_all_tables                    Oid = 11621
+	T_pg_stat_xact_all_tables               Oid = 11625
+	T_pg_stat_sys_tables                    Oid = 11629
+	T_pg_stat_xact_sys_tables               Oid = 11633
+	T_pg_stat_user_tables                   Oid = 11636
+	T_pg_stat_xact_user_tables              Oid = 11640
+	T_pg_statio_all_tables                  Oid = 11643
+	T_pg_statio_sys_tables                  Oid = 11647
+	T_pg_statio_user_tables                 Oid = 11650
+	T_pg_stat_all_indexes                   Oid = 11653
+	T_pg_stat_sys_indexes                   Oid = 11657
+	T_pg_stat_user_indexes                  Oid = 11660
+	T_pg_statio_all_indexes                 Oid = 11663
+	T_pg_statio_sys_indexes                 Oid = 11667
+	T_pg_statio_user_indexes                Oid = 11670
+	T_pg_statio_all_sequences               Oid = 11673
+	T_pg_statio_sys_sequences               Oid = 11677
+	T_pg_statio_user_sequences              Oid = 11680
+	T_pg_stat_activity                      Oid = 11683
+	T_pg_stat_replication                   Oid = 11687
+	T_pg_stat_wal_receiver                  Oid = 11691
+	T_pg_stat_subscription                  Oid = 11694
+	T_pg_stat_ssl                           Oid = 11697
+	T_pg_replication_slots                  Oid = 11700
+	T_pg_stat_database                      Oid = 11704
+	T_pg_stat_database_conflicts            Oid = 11707
+	T_pg_stat_user_functions                Oid = 11710
+	T_pg_stat_xact_user_functions           Oid = 11714
+	T_pg_stat_archiver                      Oid = 11718
+	T_pg_stat_bgwriter                      Oid = 11721
+	T_pg_stat_progress_vacuum               Oid = 11724
+	T_pg_user_mappings                      Oid = 11728
+	T_pg_replication_origin_status          Oid = 11732
+	T_cardinal_number                       Oid = 12775
+	T_character_data                        Oid = 12777
+	T_sql_identifier                        Oid = 12778
+	T_information_schema_catalog_name       Oid = 12780
+	T_time_stamp                            Oid = 12782
+	T_yes_or_no                             Oid = 12783
+	T_applicable_roles                      Oid = 12786
+	T_administrable_role_authorizations     Oid = 12790
+	T_attributes                            Oid = 12793
+	T_character_sets                        Oid = 12797
+	T_check_constraint_routine_usage        Oid = 12801
+	T_check_constraints                     Oid = 12805
+	T_collations                            Oid = 12809
+	T_collation_character_set_applicability Oid = 12813
+	T_column_domain_usage                   Oid = 12817
+	T_column_privileges                     Oid = 12821
+	T_column_udt_usage                      Oid = 12825
+	T_columns                               Oid = 12829
+	T_constraint_column_usage               Oid = 12833
+	T_constraint_table_usage                Oid = 12837
+	T_domain_constraints                    Oid = 12841
+	T_domain_udt_usage                      Oid = 12845
+	T_domains                               Oid = 12849
+	T_enabled_roles                         Oid = 12853
+	T_key_column_usage                      Oid = 12856
+	T_parameters                            Oid = 12860
+	T_referential_constraints               Oid = 12864
+	T_role_column_grants                    Oid = 12868
+	T_routine_privileges                    Oid = 12871
+	T_role_routine_grants                   Oid = 12875
+	T_routines                              Oid = 12878
+	T_schemata                              Oid = 12882
+	T_sequences                             Oid = 12885
+	T_sql_features                          Oid = 12889
+	T_pg_toast_12888                        Oid = 12891
+	T_sql_implementation_info               Oid = 12894
+	T_pg_toast_12893                        Oid = 12896
+	T_sql_languages                         Oid = 12899
+	T_pg_toast_12898                        Oid = 12901
+	T_sql_packages                          Oid = 12904
+	T_pg_toast_12903                        Oid = 12906
+	T_sql_parts                             Oid = 12909
+	T_pg_toast_12908                        Oid = 12911
+	T_sql_sizing                            Oid = 12914
+	T_pg_toast_12913                        Oid = 12916
+	T_sql_sizing_profiles                   Oid = 12919
+	T_pg_toast_12918                        Oid = 12921
+	T_table_constraints                     Oid = 12924
+	T_table_privileges                      Oid = 12928
+	T_role_table_grants                     Oid = 12932
+	T_tables                                Oid = 12935
+	T_transforms                            Oid = 12939
+	T_triggered_update_columns              Oid = 12943
+	T_triggers                              Oid = 12947
+	T_udt_privileges                        Oid = 12951
+	T_role_udt_grants                       Oid = 12955
+	T_usage_privileges                      Oid = 12958
+	T_role_usage_grants                     Oid = 12962
+	T_user_defined_types                    Oid = 12965
+	T_view_column_usage                     Oid = 12969
+	T_view_routine_usage                    Oid = 12973
+	T_view_table_usage                      Oid = 12977
+	T_views                                 Oid = 12981
+	T_data_type_privileges                  Oid = 12985
+	T_element_types                         Oid = 12989
+	T__pg_foreign_table_columns             Oid = 12993
+	T_column_options                        Oid = 12997
+	T__pg_foreign_data_wrappers             Oid = 13000
+	T_foreign_data_wrapper_options          Oid = 13003
+	T_foreign_data_wrappers                 Oid = 13006
+	T__pg_foreign_servers                   Oid = 13009
+	T_foreign_server_options                Oid = 13013
+	T_foreign_servers                       Oid = 13016
+	T__pg_foreign_tables                    Oid = 13019
+	T_foreign_table_options                 Oid = 13023
+	T_foreign_tables                        Oid = 13026
+	T__pg_user_mappings                     Oid = 13029
+	T_user_mapping_options                  Oid = 13033
+	T_user_mappings                         Oid = 13037
+	T_gbtreekey4                            Oid = 16763
+	T__gbtreekey4                           Oid = 16766
+	T_gbtreekey8                            Oid = 16767
+	T__gbtreekey8                           Oid = 16770
+	T_gbtreekey16                           Oid = 16771
+	T__gbtreekey16                          Oid = 16774
+	T_gbtreekey32                           Oid = 16775
+	T__gbtreekey32                          Oid = 16778
+	T_gbtreekey_var                         Oid = 16779
+	T__gbtreekey_var                        Oid = 16782
+	T_spheroid                              Oid = 17387
+	T__spheroid                             Oid = 17390
+	T_geometry                              Oid = 17391
+	T__geometry                             Oid = 17399
+	T_box3d                                 Oid = 17418
+	T__box3d                                Oid = 17421
+	T_box2d                                 Oid = 17422
+	T__box2d                                Oid = 17425
+	T_box2df                                Oid = 17426
+	T__box2df                               Oid = 17429
+	T_gidx                                  Oid = 17430
+	T__gidx                                 Oid = 17433
+	T__geometry_dump                        Oid = 17680
+	T_geometry_dump                         Oid = 17681
+	T__spatial_ref_sys                      Oid = 17686
+	T_spatial_ref_sys                       Oid = 17687
+	T_pg_toast_17685                        Oid = 17690
+	T__valid_detail                         Oid = 17795
+	T_valid_detail                          Oid = 17796
+	T_pgis_abs                              Oid = 17836
+	T__pgis_abs                             Oid = 17839
+	T_geography                             Oid = 18033
+	T__geography                            Oid = 18039
+	T__geography_columns                    Oid = 18055
+	T_geography_columns                     Oid = 18056
+	T__geometry_columns                     Oid = 18197
+	T_geometry_columns                      Oid = 18198
+	T_raster                                Oid = 18300
+	T__raster                               Oid = 18303
+	T__rastbandarg                          Oid = 18309
+	T_rastbandarg                           Oid = 18310
+	T__geomval                              Oid = 18312
+	T_geomval                               Oid = 18313
+	T__addbandarg                           Oid = 18339
+	T_addbandarg                            Oid = 18340
+	T__summarystats                         Oid = 18352
+	T_summarystats                          Oid = 18353
+	T__agg_count                            Oid = 18383
+	T_agg_count                             Oid = 18384
+	T__reclassarg                           Oid = 18483
+	T_reclassarg                            Oid = 18484
+	T__agg_samealignment                    Oid = 18724
+	T_agg_samealignment                     Oid = 18725
+	T__unionarg                             Oid = 18779
+	T_unionarg                              Oid = 18780
+	T__raster_columns                       Oid = 18858
+	T_raster_columns                        Oid = 18859
+	T__raster_overviews                     Oid = 18867
+	T_raster_overviews                      Oid = 18868
+	T_topology_id_seq                       Oid = 18887
+	T__topology                             Oid = 18889
+	T_topology                              Oid = 18890
+	T_pg_toast_18888                        Oid = 18894
+	T__layer                                Oid = 18902
+	T_layer                                 Oid = 18903
+	T_pg_toast_18901                        Oid = 18906
+	T__validatetopology_returntype          Oid = 18919
+	T_validatetopology_returntype           Oid = 18920
+	T__topogeometry                         Oid = 18922
+	T_topogeometry                          Oid = 18923
+	T_topoelement                           Oid = 18924
+	T_topoelementarray                      Oid = 18928
+	T__getfaceedges_returntype              Oid = 19000
+	T_getfaceedges_returntype               Oid = 19001
+	T_objectid                              Oid = 19027
+	T_disposableid                          Oid = 19029
+	T__User                                 Oid = 19031
+	T_User                                  Oid = 19032
+	T_pg_toast_19030                        Oid = 19035
 )
 
 var TypeName = map[Oid]string{
-	T_bool:             "BOOL",
-	T_bytea:            "BYTEA",
-	T_char:             "CHAR",
-	T_name:             "NAME",
-	T_int8:             "INT8",
-	T_int2:             "INT2",
-	T_int2vector:       "INT2VECTOR",
-	T_int4:             "INT4",
-	T_regproc:          "REGPROC",
-	T_text:             "TEXT",
-	T_oid:              "OID",
-	T_tid:              "TID",
-	T_xid:              "XID",
-	T_cid:              "CID",
-	T_oidvector:        "OIDVECTOR",
-	T_pg_ddl_command:   "PG_DDL_COMMAND",
-	T_pg_type:          "PG_TYPE",
-	T_pg_attribute:     "PG_ATTRIBUTE",
-	T_pg_proc:          "PG_PROC",
-	T_pg_class:         "PG_CLASS",
-	T_json:             "JSON",
-	T_xml:              "XML",
-	T__xml:             "_XML",
-	T_pg_node_tree:     "PG_NODE_TREE",
-	T__json:            "_JSON",
-	T_smgr:             "SMGR",
-	T_index_am_handler: "INDEX_AM_HANDLER",
-	T_point:            "POINT",
-	T_lseg:             "LSEG",
-	T_path:             "PATH",
-	T_box:              "BOX",
-	T_polygon:          "POLYGON",
-	T_line:             "LINE",
-	T__line:            "_LINE",
-	T_cidr:             "CIDR",
-	T__cidr:            "_CIDR",
-	T_float4:           "FLOAT4",
-	T_float8:           "FLOAT8",
-	T_abstime:          "ABSTIME",
-	T_reltime:          "RELTIME",
-	T_tinterval:        "TINTERVAL",
-	T_unknown:          "UNKNOWN",
-	T_circle:           "CIRCLE",
-	T__circle:          "_CIRCLE",
-	T_money:            "MONEY",
-	T__money:           "_MONEY",
-	T_macaddr:          "MACADDR",
-	T_inet:             "INET",
-	T__bool:            "_BOOL",
-	T__bytea:           "_BYTEA",
-	T__char:            "_CHAR",
-	T__name:            "_NAME",
-	T__int2:            "_INT2",
-	T__int2vector:      "_INT2VECTOR",
-	T__int4:            "_INT4",
-	T__regproc:         "_REGPROC",
-	T__text:            "_TEXT",
-	T__tid:             "_TID",
-	T__xid:             "_XID",
-	T__cid:             "_CID",
-	T__oidvector:       "_OIDVECTOR",
-	T__bpchar:          "_BPCHAR",
-	T__varchar:         "_VARCHAR",
-	T__int8:            "_INT8",
-	T__point:           "_POINT",
-	T__lseg:            "_LSEG",
-	T__path:            "_PATH",
-	T__box:             "_BOX",
-	T__float4:          "_FLOAT4",
-	T__float8:          "_FLOAT8",
-	T__abstime:         "_ABSTIME",
-	T__reltime:         "_RELTIME",
-	T__tinterval:       "_TINTERVAL",
-	T__polygon:         "_POLYGON",
-	T__oid:             "_OID",
-	T_aclitem:          "ACLITEM",
-	T__aclitem:         "_ACLITEM",
-	T__macaddr:         "_MACADDR",
-	T__inet:            "_INET",
-	T_bpchar:           "BPCHAR",
-	T_varchar:          "VARCHAR",
-	T_date:             "DATE",
-	T_time:             "TIME",
-	T_timestamp:        "TIMESTAMP",
-	T__timestamp:       "_TIMESTAMP",
-	T__date:            "_DATE",
-	T__time:            "_TIME",
-	T_timestamptz:      "TIMESTAMPTZ",
-	T__timestamptz:     "_TIMESTAMPTZ",
-	T_interval:         "INTERVAL",
-	T__interval:        "_INTERVAL",
-	T__numeric:         "_NUMERIC",
-	T_pg_database:      "PG_DATABASE",
-	T__cstring:         "_CSTRING",
-	T_timetz:           "TIMETZ",
-	T__timetz:          "_TIMETZ",
-	T_bit:              "BIT",
-	T__bit:             "_BIT",
-	T_varbit:           "VARBIT",
-	T__varbit:          "_VARBIT",
-	T_numeric:          "NUMERIC",
-	T_refcursor:        "REFCURSOR",
-	T__refcursor:       "_REFCURSOR",
-	T_regprocedure:     "REGPROCEDURE",
-	T_regoper:          "REGOPER",
-	T_regoperator:      "REGOPERATOR",
-	T_regclass:         "REGCLASS",
-	T_regtype:          "REGTYPE",
-	T__regprocedure:    "_REGPROCEDURE",
-	T__regoper:         "_REGOPER",
-	T__regoperator:     "_REGOPERATOR",
-	T__regclass:        "_REGCLASS",
-	T__regtype:         "_REGTYPE",
-	T_record:           "RECORD",
-	T_cstring:          "CSTRING",
-	T_any:              "ANY",
-	T_anyarray:         "ANYARRAY",
-	T_void:             "VOID",
-	T_trigger:          "TRIGGER",
-	T_language_handler: "LANGUAGE_HANDLER",
-	T_internal:         "INTERNAL",
-	T_opaque:           "OPAQUE",
-	T_anyelement:       "ANYELEMENT",
-	T__record:          "_RECORD",
-	T_anynonarray:      "ANYNONARRAY",
-	T_pg_authid:        "PG_AUTHID",
-	T_pg_auth_members:  "PG_AUTH_MEMBERS",
-	T__txid_snapshot:   "_TXID_SNAPSHOT",
-	T_uuid:             "UUID",
-	T__uuid:            "_UUID",
-	T_txid_snapshot:    "TXID_SNAPSHOT",
-	T_fdw_handler:      "FDW_HANDLER",
-	T_pg_lsn:           "PG_LSN",
-	T__pg_lsn:          "_PG_LSN",
-	T_tsm_handler:      "TSM_HANDLER",
-	T_anyenum:          "ANYENUM",
-	T_tsvector:         "TSVECTOR",
-	T_tsquery:          "TSQUERY",
-	T_gtsvector:        "GTSVECTOR",
-	T__tsvector:        "_TSVECTOR",
-	T__gtsvector:       "_GTSVECTOR",
-	T__tsquery:         "_TSQUERY",
-	T_regconfig:        "REGCONFIG",
-	T__regconfig:       "_REGCONFIG",
-	T_regdictionary:    "REGDICTIONARY",
-	T__regdictionary:   "_REGDICTIONARY",
-	T_jsonb:            "JSONB",
-	T__jsonb:           "_JSONB",
-	T_anyrange:         "ANYRANGE",
-	T_event_trigger:    "EVENT_TRIGGER",
-	T_int4range:        "INT4RANGE",
-	T__int4range:       "_INT4RANGE",
-	T_numrange:         "NUMRANGE",
-	T__numrange:        "_NUMRANGE",
-	T_tsrange:          "TSRANGE",
-	T__tsrange:         "_TSRANGE",
-	T_tstzrange:        "TSTZRANGE",
-	T__tstzrange:       "_TSTZRANGE",
-	T_daterange:        "DATERANGE",
-	T__daterange:       "_DATERANGE",
-	T_int8range:        "INT8RANGE",
-	T__int8range:       "_INT8RANGE",
-	T_pg_shseclabel:    "PG_SHSECLABEL",
-	T_regnamespace:     "REGNAMESPACE",
-	T__regnamespace:    "_REGNAMESPACE",
-	T_regrole:          "REGROLE",
-	T__regrole:         "_REGROLE",
+	T_bool:                                  "BOOL",
+	T_bytea:                                 "BYTEA",
+	T_char:                                  "CHAR",
+	T_name:                                  "NAME",
+	T_int8:                                  "INT8",
+	T_int2:                                  "INT2",
+	T_int2vector:                            "INT2VECTOR",
+	T_int4:                                  "INT4",
+	T_regproc:                               "REGPROC",
+	T_text:                                  "TEXT",
+	T_oid:                                   "OID",
+	T_tid:                                   "TID",
+	T_xid:                                   "XID",
+	T_cid:                                   "CID",
+	T_oidvector:                             "OIDVECTOR",
+	T_pg_ddl_command:                        "PG_DDL_COMMAND",
+	T_pg_type:                               "PG_TYPE",
+	T_pg_attribute:                          "PG_ATTRIBUTE",
+	T_pg_proc:                               "PG_PROC",
+	T_pg_class:                              "PG_CLASS",
+	T_json:                                  "JSON",
+	T_xml:                                   "XML",
+	T__xml:                                  "_XML",
+	T_pg_node_tree:                          "PG_NODE_TREE",
+	T__json:                                 "_JSON",
+	T_smgr:                                  "SMGR",
+	T_index_am_handler:                      "INDEX_AM_HANDLER",
+	T_point:                                 "POINT",
+	T_lseg:                                  "LSEG",
+	T_path:                                  "PATH",
+	T_box:                                   "BOX",
+	T_polygon:                               "POLYGON",
+	T_line:                                  "LINE",
+	T__line:                                 "_LINE",
+	T_cidr:                                  "CIDR",
+	T__cidr:                                 "_CIDR",
+	T_float4:                                "FLOAT4",
+	T_float8:                                "FLOAT8",
+	T_abstime:                               "ABSTIME",
+	T_reltime:                               "RELTIME",
+	T_tinterval:                             "TINTERVAL",
+	T_unknown:                               "UNKNOWN",
+	T_circle:                                "CIRCLE",
+	T__circle:                               "_CIRCLE",
+	T_macaddr8:                              "MACADDR8",
+	T__macaddr8:                             "_MACADDR8",
+	T_money:                                 "MONEY",
+	T__money:                                "_MONEY",
+	T_macaddr:                               "MACADDR",
+	T_inet:                                  "INET",
+	T__bool:                                 "_BOOL",
+	T__bytea:                                "_BYTEA",
+	T__char:                                 "_CHAR",
+	T__name:                                 "_NAME",
+	T__int2:                                 "_INT2",
+	T__int2vector:                           "_INT2VECTOR",
+	T__int4:                                 "_INT4",
+	T__regproc:                              "_REGPROC",
+	T__text:                                 "_TEXT",
+	T__tid:                                  "_TID",
+	T__xid:                                  "_XID",
+	T__cid:                                  "_CID",
+	T__oidvector:                            "_OIDVECTOR",
+	T__bpchar:                               "_BPCHAR",
+	T__varchar:                              "_VARCHAR",
+	T__int8:                                 "_INT8",
+	T__point:                                "_POINT",
+	T__lseg:                                 "_LSEG",
+	T__path:                                 "_PATH",
+	T__box:                                  "_BOX",
+	T__float4:                               "_FLOAT4",
+	T__float8:                               "_FLOAT8",
+	T__abstime:                              "_ABSTIME",
+	T__reltime:                              "_RELTIME",
+	T__tinterval:                            "_TINTERVAL",
+	T__polygon:                              "_POLYGON",
+	T__oid:                                  "_OID",
+	T_aclitem:                               "ACLITEM",
+	T__aclitem:                              "_ACLITEM",
+	T__macaddr:                              "_MACADDR",
+	T__inet:                                 "_INET",
+	T_bpchar:                                "BPCHAR",
+	T_varchar:                               "VARCHAR",
+	T_date:                                  "DATE",
+	T_time:                                  "TIME",
+	T_timestamp:                             "TIMESTAMP",
+	T__timestamp:                            "_TIMESTAMP",
+	T__date:                                 "_DATE",
+	T__time:                                 "_TIME",
+	T_timestamptz:                           "TIMESTAMPTZ",
+	T__timestamptz:                          "_TIMESTAMPTZ",
+	T_interval:                              "INTERVAL",
+	T__interval:                             "_INTERVAL",
+	T__numeric:                              "_NUMERIC",
+	T_pg_database:                           "PG_DATABASE",
+	T__cstring:                              "_CSTRING",
+	T_timetz:                                "TIMETZ",
+	T__timetz:                               "_TIMETZ",
+	T_bit:                                   "BIT",
+	T__bit:                                  "_BIT",
+	T_varbit:                                "VARBIT",
+	T__varbit:                               "_VARBIT",
+	T_numeric:                               "NUMERIC",
+	T_refcursor:                             "REFCURSOR",
+	T__refcursor:                            "_REFCURSOR",
+	T_regprocedure:                          "REGPROCEDURE",
+	T_regoper:                               "REGOPER",
+	T_regoperator:                           "REGOPERATOR",
+	T_regclass:                              "REGCLASS",
+	T_regtype:                               "REGTYPE",
+	T__regprocedure:                         "_REGPROCEDURE",
+	T__regoper:                              "_REGOPER",
+	T__regoperator:                          "_REGOPERATOR",
+	T__regclass:                             "_REGCLASS",
+	T__regtype:                              "_REGTYPE",
+	T_record:                                "RECORD",
+	T_cstring:                               "CSTRING",
+	T_any:                                   "ANY",
+	T_anyarray:                              "ANYARRAY",
+	T_void:                                  "VOID",
+	T_trigger:                               "TRIGGER",
+	T_language_handler:                      "LANGUAGE_HANDLER",
+	T_internal:                              "INTERNAL",
+	T_opaque:                                "OPAQUE",
+	T_anyelement:                            "ANYELEMENT",
+	T__record:                               "_RECORD",
+	T_anynonarray:                           "ANYNONARRAY",
+	T_pg_authid:                             "PG_AUTHID",
+	T_pg_auth_members:                       "PG_AUTH_MEMBERS",
+	T__txid_snapshot:                        "_TXID_SNAPSHOT",
+	T_uuid:                                  "UUID",
+	T__uuid:                                 "_UUID",
+	T_txid_snapshot:                         "TXID_SNAPSHOT",
+	T_fdw_handler:                           "FDW_HANDLER",
+	T_pg_lsn:                                "PG_LSN",
+	T__pg_lsn:                               "_PG_LSN",
+	T_tsm_handler:                           "TSM_HANDLER",
+	T_pg_ndistinct:                          "PG_NDISTINCT",
+	T_pg_dependencies:                       "PG_DEPENDENCIES",
+	T_anyenum:                               "ANYENUM",
+	T_tsvector:                              "TSVECTOR",
+	T_tsquery:                               "TSQUERY",
+	T_gtsvector:                             "GTSVECTOR",
+	T__tsvector:                             "_TSVECTOR",
+	T__gtsvector:                            "_GTSVECTOR",
+	T__tsquery:                              "_TSQUERY",
+	T_regconfig:                             "REGCONFIG",
+	T__regconfig:                            "_REGCONFIG",
+	T_regdictionary:                         "REGDICTIONARY",
+	T__regdictionary:                        "_REGDICTIONARY",
+	T_jsonb:                                 "JSONB",
+	T__jsonb:                                "_JSONB",
+	T_anyrange:                              "ANYRANGE",
+	T_event_trigger:                         "EVENT_TRIGGER",
+	T_int4range:                             "INT4RANGE",
+	T__int4range:                            "_INT4RANGE",
+	T_numrange:                              "NUMRANGE",
+	T__numrange:                             "_NUMRANGE",
+	T_tsrange:                               "TSRANGE",
+	T__tsrange:                              "_TSRANGE",
+	T_tstzrange:                             "TSTZRANGE",
+	T__tstzrange:                            "_TSTZRANGE",
+	T_daterange:                             "DATERANGE",
+	T__daterange:                            "_DATERANGE",
+	T_int8range:                             "INT8RANGE",
+	T__int8range:                            "_INT8RANGE",
+	T_pg_shseclabel:                         "PG_SHSECLABEL",
+	T_regnamespace:                          "REGNAMESPACE",
+	T__regnamespace:                         "_REGNAMESPACE",
+	T_regrole:                               "REGROLE",
+	T__regrole:                              "_REGROLE",
+	T_pg_subscription:                       "PG_SUBSCRIPTION",
+	T_pg_attrdef:                            "PG_ATTRDEF",
+	T_pg_constraint:                         "PG_CONSTRAINT",
+	T_pg_inherits:                           "PG_INHERITS",
+	T_pg_index:                              "PG_INDEX",
+	T_pg_operator:                           "PG_OPERATOR",
+	T_pg_opfamily:                           "PG_OPFAMILY",
+	T_pg_opclass:                            "PG_OPCLASS",
+	T_pg_am:                                 "PG_AM",
+	T_pg_amop:                               "PG_AMOP",
+	T_pg_amproc:                             "PG_AMPROC",
+	T_pg_language:                           "PG_LANGUAGE",
+	T_pg_largeobject_metadata:               "PG_LARGEOBJECT_METADATA",
+	T_pg_largeobject:                        "PG_LARGEOBJECT",
+	T_pg_aggregate:                          "PG_AGGREGATE",
+	T_pg_statistic_ext:                      "PG_STATISTIC_EXT",
+	T_pg_statistic:                          "PG_STATISTIC",
+	T_pg_rewrite:                            "PG_REWRITE",
+	T_pg_trigger:                            "PG_TRIGGER",
+	T_pg_event_trigger:                      "PG_EVENT_TRIGGER",
+	T_pg_description:                        "PG_DESCRIPTION",
+	T_pg_cast:                               "PG_CAST",
+	T_pg_enum:                               "PG_ENUM",
+	T_pg_namespace:                          "PG_NAMESPACE",
+	T_pg_conversion:                         "PG_CONVERSION",
+	T_pg_depend:                             "PG_DEPEND",
+	T_pg_db_role_setting:                    "PG_DB_ROLE_SETTING",
+	T_pg_tablespace:                         "PG_TABLESPACE",
+	T_pg_pltemplate:                         "PG_PLTEMPLATE",
+	T_pg_shdepend:                           "PG_SHDEPEND",
+	T_pg_shdescription:                      "PG_SHDESCRIPTION",
+	T_pg_ts_config:                          "PG_TS_CONFIG",
+	T_pg_ts_config_map:                      "PG_TS_CONFIG_MAP",
+	T_pg_ts_dict:                            "PG_TS_DICT",
+	T_pg_ts_parser:                          "PG_TS_PARSER",
+	T_pg_ts_template:                        "PG_TS_TEMPLATE",
+	T_pg_extension:                          "PG_EXTENSION",
+	T_pg_foreign_data_wrapper:               "PG_FOREIGN_DATA_WRAPPER",
+	T_pg_foreign_server:                     "PG_FOREIGN_SERVER",
+	T_pg_user_mapping:                       "PG_USER_MAPPING",
+	T_pg_foreign_table:                      "PG_FOREIGN_TABLE",
+	T_pg_policy:                             "PG_POLICY",
+	T_pg_replication_origin:                 "PG_REPLICATION_ORIGIN",
+	T_pg_default_acl:                        "PG_DEFAULT_ACL",
+	T_pg_init_privs:                         "PG_INIT_PRIVS",
+	T_pg_seclabel:                           "PG_SECLABEL",
+	T_pg_collation:                          "PG_COLLATION",
+	T_pg_partitioned_table:                  "PG_PARTITIONED_TABLE",
+	T_pg_range:                              "PG_RANGE",
+	T_pg_transform:                          "PG_TRANSFORM",
+	T_pg_sequence:                           "PG_SEQUENCE",
+	T_pg_publication:                        "PG_PUBLICATION",
+	T_pg_publication_rel:                    "PG_PUBLICATION_REL",
+	T_pg_subscription_rel:                   "PG_SUBSCRIPTION_REL",
+	T_pg_toast_2604:                         "PG_TOAST_2604",
+	T_pg_toast_2606:                         "PG_TOAST_2606",
+	T_pg_toast_2609:                         "PG_TOAST_2609",
+	T_pg_toast_1255:                         "PG_TOAST_1255",
+	T_pg_toast_2618:                         "PG_TOAST_2618",
+	T_pg_toast_3596:                         "PG_TOAST_3596",
+	T_pg_toast_2619:                         "PG_TOAST_2619",
+	T_pg_toast_3381:                         "PG_TOAST_3381",
+	T_pg_toast_2620:                         "PG_TOAST_2620",
+	T_pg_toast_2396:                         "PG_TOAST_2396",
+	T_pg_toast_2964:                         "PG_TOAST_2964",
+	T_pg_toast_3592:                         "PG_TOAST_3592",
+	T_pg_roles:                              "PG_ROLES",
+	T_pg_shadow:                             "PG_SHADOW",
+	T_pg_group:                              "PG_GROUP",
+	T_pg_user:                               "PG_USER",
+	T_pg_policies:                           "PG_POLICIES",
+	T_pg_rules:                              "PG_RULES",
+	T_pg_views:                              "PG_VIEWS",
+	T_pg_tables:                             "PG_TABLES",
+	T_pg_matviews:                           "PG_MATVIEWS",
+	T_pg_indexes:                            "PG_INDEXES",
+	T_pg_sequences:                          "PG_SEQUENCES",
+	T_pg_stats:                              "PG_STATS",
+	T_pg_publication_tables:                 "PG_PUBLICATION_TABLES",
+	T_pg_locks:                              "PG_LOCKS",
+	T_pg_cursors:                            "PG_CURSORS",
+	T_pg_available_extensions:               "PG_AVAILABLE_EXTENSIONS",
+	T_pg_available_extension_versions:       "PG_AVAILABLE_EXTENSION_VERSIONS",
+	T_pg_prepared_xacts:                     "PG_PREPARED_XACTS",
+	T_pg_prepared_statements:                "PG_PREPARED_STATEMENTS",
+	T_pg_seclabels:                          "PG_SECLABELS",
+	T_pg_settings:                           "PG_SETTINGS",
+	T_pg_file_settings:                      "PG_FILE_SETTINGS",
+	T_pg_hba_file_rules:                     "PG_HBA_FILE_RULES",
+	T_pg_timezone_abbrevs:                   "PG_TIMEZONE_ABBREVS",
+	T_pg_timezone_names:                     "PG_TIMEZONE_NAMES",
+	T_pg_config:                             "PG_CONFIG",
+	T_pg_stat_all_tables:                    "PG_STAT_ALL_TABLES",
+	T_pg_stat_xact_all_tables:               "PG_STAT_XACT_ALL_TABLES",
+	T_pg_stat_sys_tables:                    "PG_STAT_SYS_TABLES",
+	T_pg_stat_xact_sys_tables:               "PG_STAT_XACT_SYS_TABLES",
+	T_pg_stat_user_tables:                   "PG_STAT_USER_TABLES",
+	T_pg_stat_xact_user_tables:              "PG_STAT_XACT_USER_TABLES",
+	T_pg_statio_all_tables:                  "PG_STATIO_ALL_TABLES",
+	T_pg_statio_sys_tables:                  "PG_STATIO_SYS_TABLES",
+	T_pg_statio_user_tables:                 "PG_STATIO_USER_TABLES",
+	T_pg_stat_all_indexes:                   "PG_STAT_ALL_INDEXES",
+	T_pg_stat_sys_indexes:                   "PG_STAT_SYS_INDEXES",
+	T_pg_stat_user_indexes:                  "PG_STAT_USER_INDEXES",
+	T_pg_statio_all_indexes:                 "PG_STATIO_ALL_INDEXES",
+	T_pg_statio_sys_indexes:                 "PG_STATIO_SYS_INDEXES",
+	T_pg_statio_user_indexes:                "PG_STATIO_USER_INDEXES",
+	T_pg_statio_all_sequences:               "PG_STATIO_ALL_SEQUENCES",
+	T_pg_statio_sys_sequences:               "PG_STATIO_SYS_SEQUENCES",
+	T_pg_statio_user_sequences:              "PG_STATIO_USER_SEQUENCES",
+	T_pg_stat_activity:                      "PG_STAT_ACTIVITY",
+	T_pg_stat_replication:                   "PG_STAT_REPLICATION",
+	T_pg_stat_wal_receiver:                  "PG_STAT_WAL_RECEIVER",
+	T_pg_stat_subscription:                  "PG_STAT_SUBSCRIPTION",
+	T_pg_stat_ssl:                           "PG_STAT_SSL",
+	T_pg_replication_slots:                  "PG_REPLICATION_SLOTS",
+	T_pg_stat_database:                      "PG_STAT_DATABASE",
+	T_pg_stat_database_conflicts:            "PG_STAT_DATABASE_CONFLICTS",
+	T_pg_stat_user_functions:                "PG_STAT_USER_FUNCTIONS",
+	T_pg_stat_xact_user_functions:           "PG_STAT_XACT_USER_FUNCTIONS",
+	T_pg_stat_archiver:                      "PG_STAT_ARCHIVER",
+	T_pg_stat_bgwriter:                      "PG_STAT_BGWRITER",
+	T_pg_stat_progress_vacuum:               "PG_STAT_PROGRESS_VACUUM",
+	T_pg_user_mappings:                      "PG_USER_MAPPINGS",
+	T_pg_replication_origin_status:          "PG_REPLICATION_ORIGIN_STATUS",
+	T_cardinal_number:                       "CARDINAL_NUMBER",
+	T_character_data:                        "CHARACTER_DATA",
+	T_sql_identifier:                        "SQL_IDENTIFIER",
+	T_information_schema_catalog_name:       "INFORMATION_SCHEMA_CATALOG_NAME",
+	T_time_stamp:                            "TIME_STAMP",
+	T_yes_or_no:                             "YES_OR_NO",
+	T_applicable_roles:                      "APPLICABLE_ROLES",
+	T_administrable_role_authorizations:     "ADMINISTRABLE_ROLE_AUTHORIZATIONS",
+	T_attributes:                            "ATTRIBUTES",
+	T_character_sets:                        "CHARACTER_SETS",
+	T_check_constraint_routine_usage:        "CHECK_CONSTRAINT_ROUTINE_USAGE",
+	T_check_constraints:                     "CHECK_CONSTRAINTS",
+	T_collations:                            "COLLATIONS",
+	T_collation_character_set_applicability: "COLLATION_CHARACTER_SET_APPLICABILITY",
+	T_column_domain_usage:                   "COLUMN_DOMAIN_USAGE",
+	T_column_privileges:                     "COLUMN_PRIVILEGES",
+	T_column_udt_usage:                      "COLUMN_UDT_USAGE",
+	T_columns:                               "COLUMNS",
+	T_constraint_column_usage:               "CONSTRAINT_COLUMN_USAGE",
+	T_constraint_table_usage:                "CONSTRAINT_TABLE_USAGE",
+	T_domain_constraints:                    "DOMAIN_CONSTRAINTS",
+	T_domain_udt_usage:                      "DOMAIN_UDT_USAGE",
+	T_domains:                               "DOMAINS",
+	T_enabled_roles:                         "ENABLED_ROLES",
+	T_key_column_usage:                      "KEY_COLUMN_USAGE",
+	T_parameters:                            "PARAMETERS",
+	T_referential_constraints:               "REFERENTIAL_CONSTRAINTS",
+	T_role_column_grants:                    "ROLE_COLUMN_GRANTS",
+	T_routine_privileges:                    "ROUTINE_PRIVILEGES",
+	T_role_routine_grants:                   "ROLE_ROUTINE_GRANTS",
+	T_routines:                              "ROUTINES",
+	T_schemata:                              "SCHEMATA",
+	T_sequences:                             "SEQUENCES",
+	T_sql_features:                          "SQL_FEATURES",
+	T_pg_toast_12888:                        "PG_TOAST_12888",
+	T_sql_implementation_info:               "SQL_IMPLEMENTATION_INFO",
+	T_pg_toast_12893:                        "PG_TOAST_12893",
+	T_sql_languages:                         "SQL_LANGUAGES",
+	T_pg_toast_12898:                        "PG_TOAST_12898",
+	T_sql_packages:                          "SQL_PACKAGES",
+	T_pg_toast_12903:                        "PG_TOAST_12903",
+	T_sql_parts:                             "SQL_PARTS",
+	T_pg_toast_12908:                        "PG_TOAST_12908",
+	T_sql_sizing:                            "SQL_SIZING",
+	T_pg_toast_12913:                        "PG_TOAST_12913",
+	T_sql_sizing_profiles:                   "SQL_SIZING_PROFILES",
+	T_pg_toast_12918:                        "PG_TOAST_12918",
+	T_table_constraints:                     "TABLE_CONSTRAINTS",
+	T_table_privileges:                      "TABLE_PRIVILEGES",
+	T_role_table_grants:                     "ROLE_TABLE_GRANTS",
+	T_tables:                                "TABLES",
+	T_transforms:                            "TRANSFORMS",
+	T_triggered_update_columns:              "TRIGGERED_UPDATE_COLUMNS",
+	T_triggers:                              "TRIGGERS",
+	T_udt_privileges:                        "UDT_PRIVILEGES",
+	T_role_udt_grants:                       "ROLE_UDT_GRANTS",
+	T_usage_privileges:                      "USAGE_PRIVILEGES",
+	T_role_usage_grants:                     "ROLE_USAGE_GRANTS",
+	T_user_defined_types:                    "USER_DEFINED_TYPES",
+	T_view_column_usage:                     "VIEW_COLUMN_USAGE",
+	T_view_routine_usage:                    "VIEW_ROUTINE_USAGE",
+	T_view_table_usage:                      "VIEW_TABLE_USAGE",
+	T_views:                                 "VIEWS",
+	T_data_type_privileges:                  "DATA_TYPE_PRIVILEGES",
+	T_element_types:                         "ELEMENT_TYPES",
+	T__pg_foreign_table_columns:             "_PG_FOREIGN_TABLE_COLUMNS",
+	T_column_options:                        "COLUMN_OPTIONS",
+	T__pg_foreign_data_wrappers:             "_PG_FOREIGN_DATA_WRAPPERS",
+	T_foreign_data_wrapper_options:          "FOREIGN_DATA_WRAPPER_OPTIONS",
+	T_foreign_data_wrappers:                 "FOREIGN_DATA_WRAPPERS",
+	T__pg_foreign_servers:                   "_PG_FOREIGN_SERVERS",
+	T_foreign_server_options:                "FOREIGN_SERVER_OPTIONS",
+	T_foreign_servers:                       "FOREIGN_SERVERS",
+	T__pg_foreign_tables:                    "_PG_FOREIGN_TABLES",
+	T_foreign_table_options:                 "FOREIGN_TABLE_OPTIONS",
+	T_foreign_tables:                        "FOREIGN_TABLES",
+	T__pg_user_mappings:                     "_PG_USER_MAPPINGS",
+	T_user_mapping_options:                  "USER_MAPPING_OPTIONS",
+	T_user_mappings:                         "USER_MAPPINGS",
+	T_gbtreekey4:                            "GBTREEKEY4",
+	T__gbtreekey4:                           "_GBTREEKEY4",
+	T_gbtreekey8:                            "GBTREEKEY8",
+	T__gbtreekey8:                           "_GBTREEKEY8",
+	T_gbtreekey16:                           "GBTREEKEY16",
+	T__gbtreekey16:                          "_GBTREEKEY16",
+	T_gbtreekey32:                           "GBTREEKEY32",
+	T__gbtreekey32:                          "_GBTREEKEY32",
+	T_gbtreekey_var:                         "GBTREEKEY_VAR",
+	T__gbtreekey_var:                        "_GBTREEKEY_VAR",
+	T_spheroid:                              "SPHEROID",
+	T__spheroid:                             "_SPHEROID",
+	T_geometry:                              "GEOMETRY",
+	T__geometry:                             "_GEOMETRY",
+	T_box3d:                                 "BOX3D",
+	T__box3d:                                "_BOX3D",
+	T_box2d:                                 "BOX2D",
+	T__box2d:                                "_BOX2D",
+	T_box2df:                                "BOX2DF",
+	T__box2df:                               "_BOX2DF",
+	T_gidx:                                  "GIDX",
+	T__gidx:                                 "_GIDX",
+	T__geometry_dump:                        "_GEOMETRY_DUMP",
+	T_geometry_dump:                         "GEOMETRY_DUMP",
+	T__spatial_ref_sys:                      "_SPATIAL_REF_SYS",
+	T_spatial_ref_sys:                       "SPATIAL_REF_SYS",
+	T_pg_toast_17685:                        "PG_TOAST_17685",
+	T__valid_detail:                         "_VALID_DETAIL",
+	T_valid_detail:                          "VALID_DETAIL",
+	T_pgis_abs:                              "PGIS_ABS",
+	T__pgis_abs:                             "_PGIS_ABS",
+	T_geography:                             "GEOGRAPHY",
+	T__geography:                            "_GEOGRAPHY",
+	T__geography_columns:                    "_GEOGRAPHY_COLUMNS",
+	T_geography_columns:                     "GEOGRAPHY_COLUMNS",
+	T__geometry_columns:                     "_GEOMETRY_COLUMNS",
+	T_geometry_columns:                      "GEOMETRY_COLUMNS",
+	T_raster:                                "RASTER",
+	T__raster:                               "_RASTER",
+	T__rastbandarg:                          "_RASTBANDARG",
+	T_rastbandarg:                           "RASTBANDARG",
+	T__geomval:                              "_GEOMVAL",
+	T_geomval:                               "GEOMVAL",
+	T__addbandarg:                           "_ADDBANDARG",
+	T_addbandarg:                            "ADDBANDARG",
+	T__summarystats:                         "_SUMMARYSTATS",
+	T_summarystats:                          "SUMMARYSTATS",
+	T__agg_count:                            "_AGG_COUNT",
+	T_agg_count:                             "AGG_COUNT",
+	T__reclassarg:                           "_RECLASSARG",
+	T_reclassarg:                            "RECLASSARG",
+	T__agg_samealignment:                    "_AGG_SAMEALIGNMENT",
+	T_agg_samealignment:                     "AGG_SAMEALIGNMENT",
+	T__unionarg:                             "_UNIONARG",
+	T_unionarg:                              "UNIONARG",
+	T__raster_columns:                       "_RASTER_COLUMNS",
+	T_raster_columns:                        "RASTER_COLUMNS",
+	T__raster_overviews:                     "_RASTER_OVERVIEWS",
+	T_raster_overviews:                      "RASTER_OVERVIEWS",
+	T_topology_id_seq:                       "TOPOLOGY_ID_SEQ",
+	T__topology:                             "_TOPOLOGY",
+	T_topology:                              "TOPOLOGY",
+	T_pg_toast_18888:                        "PG_TOAST_18888",
+	T__layer:                                "_LAYER",
+	T_layer:                                 "LAYER",
+	T_pg_toast_18901:                        "PG_TOAST_18901",
+	T__validatetopology_returntype:          "_VALIDATETOPOLOGY_RETURNTYPE",
+	T_validatetopology_returntype:           "VALIDATETOPOLOGY_RETURNTYPE",
+	T__topogeometry:                         "_TOPOGEOMETRY",
+	T_topogeometry:                          "TOPOGEOMETRY",
+	T_topoelement:                           "TOPOELEMENT",
+	T_topoelementarray:                      "TOPOELEMENTARRAY",
+	T__getfaceedges_returntype:              "_GETFACEEDGES_RETURNTYPE",
+	T_getfaceedges_returntype:               "GETFACEEDGES_RETURNTYPE",
+	T_objectid:                              "OBJECTID",
+	T_disposableid:                          "DISPOSABLEID",
+	T__User:                                 "_USER",
+	T_User:                                  "USER",
+	T_pg_toast_19030:                        "PG_TOAST_19030",
 }

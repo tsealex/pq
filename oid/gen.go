@@ -44,7 +44,7 @@ func main() {
 	}
 	rows, err := db.Query(`
 		SELECT typname, oid
-		FROM pg_type WHERE oid < 10000
+		FROM pg_type WHERE oid < 20000
 		ORDER BY oid;
 	`)
 	if err != nil {
